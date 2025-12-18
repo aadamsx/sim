@@ -29,7 +29,10 @@ import {
   OutputSelect,
 } from '@/app/workspace/[workspaceId]/w/[workflowId]/components/chat/components'
 import { useChatFileUpload } from '@/app/workspace/[workspaceId]/w/[workflowId]/components/chat/hooks'
-import { useScrollManagement } from '@/app/workspace/[workspaceId]/w/[workflowId]/hooks'
+import {
+  usePreventZoom,
+  useScrollManagement,
+} from '@/app/workspace/[workspaceId]/w/[workflowId]/hooks'
 import {
   useFloatBoundarySync,
   useFloatDrag,
@@ -225,6 +228,7 @@ export function Chat() {
   const inputRef = useRef<HTMLInputElement>(null)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const abortControllerRef = useRef<AbortController | null>(null)
+  const preventZoomRef = usePreventZoom()
 
   // File upload hook
   const {
@@ -784,6 +788,7 @@ export function Chat() {
 
   return (
     <div
+      ref={preventZoomRef}
       className='fixed z-30 flex flex-col overflow-hidden rounded-[6px] border border-[var(--border)] bg-[var(--surface-1)] px-[10px] pt-[2px] pb-[8px]'
       style={{
         left: `${actualPosition.x}px`,
