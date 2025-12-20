@@ -374,12 +374,7 @@ export function ScheduleSave({ blockId, isPreview = false, disabled = false }: S
             saveStatus === 'error' && 'bg-red-600 hover:bg-red-700'
           )}
         >
-          {saveStatus === 'saving' && (
-            <>
-              <div className='mr-2 h-4 w-4 animate-spin rounded-full border-[1.5px] border-current border-t-transparent' />
-              Saving...
-            </>
-          )}
+          {saveStatus === 'saving' && 'Saving...'}
           {saveStatus === 'saved' && 'Saved'}
           {saveStatus === 'idle' && (scheduleId ? 'Update Schedule' : 'Save Schedule')}
           {saveStatus === 'error' && 'Error'}
@@ -392,11 +387,7 @@ export function ScheduleSave({ blockId, isPreview = false, disabled = false }: S
             disabled={disabled || isPreview || deleteStatus === 'deleting' || isSaving}
             className='h-9 rounded-[8px] px-3'
           >
-            {deleteStatus === 'deleting' ? (
-              <div className='h-4 w-4 animate-spin rounded-full border-[1.5px] border-current border-t-transparent' />
-            ) : (
-              <Trash className='h-[14px] w-[14px]' />
-            )}
+            <Trash className='h-[14px] w-[14px]' />
           </Button>
         )}
       </div>

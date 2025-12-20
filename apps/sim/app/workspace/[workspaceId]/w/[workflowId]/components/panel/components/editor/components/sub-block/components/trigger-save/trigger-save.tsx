@@ -367,12 +367,7 @@ export function TriggerSave({
             saveStatus === 'error' && 'bg-red-600 hover:bg-red-700'
           )}
         >
-          {saveStatus === 'saving' && (
-            <>
-              <div className='mr-2 h-4 w-4 animate-spin rounded-full border-[1.5px] border-current border-t-transparent' />
-              Saving...
-            </>
-          )}
+          {saveStatus === 'saving' && 'Saving...'}
           {saveStatus === 'saved' && 'Saved'}
           {saveStatus === 'error' && 'Error'}
           {saveStatus === 'idle' && (webhookId ? 'Update Configuration' : 'Save Configuration')}
@@ -385,11 +380,7 @@ export function TriggerSave({
             disabled={disabled || isProcessing}
             className='h-[32px] rounded-[8px] px-[12px]'
           >
-            {deleteStatus === 'deleting' ? (
-              <div className='h-4 w-4 animate-spin rounded-full border-[1.5px] border-current border-t-transparent' />
-            ) : (
-              <Trash className='h-[14px] w-[14px]' />
-            )}
+            <Trash className='h-[14px] w-[14px]' />
           </Button>
         )}
       </div>
@@ -410,16 +401,7 @@ export function TriggerSave({
               disabled={isGeneratingTestUrl || isProcessing}
               className='h-[32px] rounded-[8px] px-[12px]'
             >
-              {isGeneratingTestUrl ? (
-                <>
-                  <div className='mr-2 h-3 w-3 animate-spin rounded-full border-[1.5px] border-current border-t-transparent' />
-                  Generating…
-                </>
-              ) : testUrl ? (
-                'Regenerate'
-              ) : (
-                'Generate'
-              )}
+              {isGeneratingTestUrl ? 'Generating…' : testUrl ? 'Regenerate' : 'Generate'}
             </Button>
           </div>
           {testUrl ? (

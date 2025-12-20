@@ -1,7 +1,6 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import { Loader2 } from 'lucide-react'
 import {
   Button,
   Combobox,
@@ -755,14 +754,7 @@ export function DocumentTagsModal({
                           ))
                       }
                     >
-                      {isSavingTag ? (
-                        <>
-                          <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-                          Creating...
-                        </>
-                      ) : (
-                        'Create Tag'
-                      )}
+                      {isSavingTag ? 'Creating...' : 'Create Tag'}
                     </Button>
                   </div>
                 </div>
