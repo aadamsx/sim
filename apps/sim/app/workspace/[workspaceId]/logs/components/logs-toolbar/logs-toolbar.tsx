@@ -294,7 +294,7 @@ export function LogsToolbar({
         </div>
         <div className='flex items-center gap-[8px]'>
           {/* More options popover */}
-          <Popover>
+          <Popover size='sm'>
             <PopoverTrigger asChild>
               <Button variant='default' className='h-[32px] w-[32px] rounded-[6px] p-0'>
                 <MoreHorizontal className='h-[14px] w-[14px]' />
@@ -335,7 +335,7 @@ export function LogsToolbar({
 
           {/* Live button */}
           <Button
-            variant={isLive ? 'primary' : 'default'}
+            variant={isLive ? 'tertiary' : 'default'}
             onClick={onToggleLive}
             className='h-[32px] rounded-[6px] px-[10px]'
           >

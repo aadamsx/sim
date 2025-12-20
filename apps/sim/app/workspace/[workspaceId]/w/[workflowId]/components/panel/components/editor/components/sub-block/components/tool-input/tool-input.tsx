@@ -1836,6 +1836,7 @@ export function ToolInput({
             className='w-[var(--radix-popover-trigger-width)]'
             align='start'
             sideOffset={6}
+            border
           >
             <ToolCommand.Root filter={customFilter} searchQuery={searchQuery}>
               <CommandKeyboardWrapper>
@@ -1908,8 +1909,8 @@ export function ToolInput({
                                 setOpen(false)
                               }}
                             >
-                              <div className='flex h-[15px] w-[15px] flex-shrink-0 items-center justify-center rounded bg-blue-500'>
-                                <WrenchIcon className='h-[11px] w-[11px] text-white' />
+                              <div className='flex h-[14px] w-[14px] flex-shrink-0 items-center justify-center rounded-[4px] bg-blue-500'>
+                                <WrenchIcon className='h-[9px] w-[9px] text-white' />
                               </div>
                               <span className='truncate'>{customTool.title}</span>
                             </ToolCommand.Item>
@@ -1945,12 +1946,12 @@ export function ToolInput({
                               onSelect={() => handleSelectTool(block)}
                             >
                               <div
-                                className='flex h-[15px] w-[15px] flex-shrink-0 items-center justify-center rounded'
+                                className='flex h-[14px] w-[14px] flex-shrink-0 items-center justify-center rounded-[4px]'
                                 style={{ background: block.bgColor }}
                               >
                                 <IconComponent
                                   icon={block.icon}
-                                  className='h-[11px] w-[11px] text-white'
+                                  className='h-[9px] w-[9px] text-white'
                                 />
                               </div>
                               <span className='truncate'>{block.name}</span>
@@ -2174,6 +2175,7 @@ export function ToolInput({
                           sideOffset={8}
                           onClick={(e: React.MouseEvent) => e.stopPropagation()}
                           className='gap-[2px]'
+                          border
                         >
                           <PopoverItem
                             active={(tool.usageControl || 'auto') === 'auto'}
@@ -2415,6 +2417,7 @@ export function ToolInput({
               className='w-[var(--radix-popover-trigger-width)]'
               align='start'
               sideOffset={6}
+              border
             >
               <ToolCommand.Root filter={customFilter} searchQuery={searchQuery}>
                 <CommandKeyboardWrapper>
@@ -2483,8 +2486,8 @@ export function ToolInput({
                                   setOpen(false)
                                 }}
                               >
-                                <div className='flex h-[15px] w-[15px] flex-shrink-0 items-center justify-center rounded bg-blue-500'>
-                                  <WrenchIcon className='h-[11px] w-[11px] text-white' />
+                                <div className='flex h-[14px] w-[14px] flex-shrink-0 items-center justify-center rounded-[4px] bg-blue-500'>
+                                  <WrenchIcon className='h-[9px] w-[9px] text-white' />
                                 </div>
                                 <span className='truncate'>{customTool.title}</span>
                               </ToolCommand.Item>
@@ -2520,12 +2523,12 @@ export function ToolInput({
                                 onSelect={() => handleSelectTool(block)}
                               >
                                 <div
-                                  className='flex h-[15px] w-[15px] flex-shrink-0 items-center justify-center rounded'
+                                  className='flex h-[14px] w-[14px] flex-shrink-0 items-center justify-center rounded-[4px]'
                                   style={{ background: block.bgColor }}
                                 >
                                   <IconComponent
                                     icon={block.icon}
-                                    className='h-[11px] w-[11px] text-white'
+                                    className='h-[9px] w-[9px] text-white'
                                   />
                                 </div>
                                 <span className='truncate'>{block.name}</span>

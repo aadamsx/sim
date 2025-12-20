@@ -549,7 +549,7 @@ export function CreateBaseModal({
                   Cancel
                 </Button>
                 <Button
-                  variant='primary'
+                  variant='tertiary'
                   type='submit'
                   disabled={isSubmitting || !nameValue?.trim()}
                 >

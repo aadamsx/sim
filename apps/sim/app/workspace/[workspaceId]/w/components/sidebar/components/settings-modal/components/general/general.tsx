@@ -553,7 +553,7 @@ export function General({ onOpenChange }: GeneralProps) {
               Cancel
             </Button>
             <Button
-              variant='primary'
+              variant='tertiary'
               onClick={handleResetPasswordConfirm}
               disabled={isResettingPassword || resetPasswordSuccess}
             >

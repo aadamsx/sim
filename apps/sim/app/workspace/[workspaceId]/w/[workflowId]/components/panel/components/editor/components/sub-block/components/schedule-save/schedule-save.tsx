@@ -484,11 +484,7 @@ export function ScheduleSave({ blockId, isPreview = false, disabled = false }: S
             <Button variant='active' onClick={() => setShowDeleteDialog(false)}>
               Cancel
             </Button>
-            <Button
-              variant='primary'
-              onClick={handleDeleteConfirm}
-              className='!bg-[var(--text-error)] !text-white hover:!bg-[var(--text-error)]/90'
-            >
+            <Button variant='destructive' onClick={handleDeleteConfirm}>
               Delete
             </Button>
           </ModalFooter>
