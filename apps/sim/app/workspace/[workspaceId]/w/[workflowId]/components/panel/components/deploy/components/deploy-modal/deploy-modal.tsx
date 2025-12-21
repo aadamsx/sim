@@ -1,8 +1,8 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import clsx from 'clsx'
 import {
+  Badge,
   Button,
   Modal,
   ModalBody,
@@ -731,29 +731,10 @@ interface StatusBadgeProps {
 
 function StatusBadge({ isWarning }: StatusBadgeProps) {
   const label = isWarning ? 'Update deployment' : 'Live'
-
   return (
-    <div
-      className={clsx(
-        'flex h-[24px] items-center justify-start gap-[8px] rounded-[6px] border px-[9px]',
-        isWarning ? 'border-[#A16207] bg-[#452C0F]' : 'border-[#22703D] bg-[#14291B]'
-      )}
-    >
-      <div
-        className='h-[6px] w-[6px] rounded-[2px]'
-        style={{
-          backgroundColor: isWarning ? '#EAB308' : '#4ADE80',
-        }}
-      />
-      <span
-        className='font-medium text-[11.5px]'
-        style={{
-          color: isWarning ? '#EAB308' : '#86EFAC',
-        }}
-      >
-        {label}
-      </span>
-    </div>
+    <Badge variant={isWarning ? 'amber' : 'green'} size='lg' dot>
+      {label}
+    </Badge>
   )
 }
 
@@ -773,35 +754,10 @@ function TemplateStatusBadge({ status, views, stars }: TemplateStatusBadgeProps)
       : null
 
   return (
-    <div
-      className={clsx(
-        'flex h-[24px] items-center justify-start gap-[8px] rounded-[6px] border px-[9px]',
-        isPending ? 'border-[#A16207] bg-[#452C0F]' : 'border-[#22703D] bg-[#14291B]'
-      )}
-    >
-      <div
-        className='h-[6px] w-[6px] rounded-[2px]'
-        style={{
-          backgroundColor: isPending ? '#EAB308' : '#4ADE80',
-        }}
-      />
-      <span
-        className='font-medium text-[11.5px]'
-        style={{
-          color: isPending ? '#EAB308' : '#86EFAC',
-        }}
-      >
-        {label}
-      </span>
-      {statsText && (
-        <span
-          className='font-medium text-[11.5px]'
-          style={{ color: isPending ? '#EAB308' : '#86EFAC' }}
-        >
-          • {statsText}
-        </span>
-      )}
-    </div>
+    <Badge variant={isPending ? 'amber' : 'green'} size='lg' dot>
+      {label}
+      {statsText && <span>• {statsText}</span>}
+    </Badge>
   )
 }
 
